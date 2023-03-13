@@ -294,7 +294,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker.PetEditor
         private ToolStripMenuItem polandToolStripMenuItem;
         private ToolStripMenuItem italianToolStripMenuItem;
         private ToolStripMenuItem spanishToolStripMenuItem;
-        private Encoding encoding = Encoding.GetEncoding(1251);
+        private Encoding encoding = Encoding.GetEncoding("ISO-8859-1");
         public BigPetEditorr()
         {
             InitializeComponent();

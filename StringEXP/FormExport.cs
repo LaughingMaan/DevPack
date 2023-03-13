@@ -31,7 +31,7 @@ namespace StringExporter
 
         private string EncodingString(string orig, int nNation)
         {
-            Encoding encLatin_1 = Encoding.GetEncoding(1251);
+            Encoding encLatin_1 = Encoding.GetEncoding("ISO-8859-1");
             Encoding encOut;
 
             if (string.IsNullOrEmpty(strEncoding[nNation]))
@@ -106,7 +106,7 @@ namespace StringExporter
             bw.Write(dt.Rows.Count);
             bw.Write(nMax);
 
-            Encoding encLatin_1 = Encoding.GetEncoding(1251);            
+            Encoding encLatin_1 = Encoding.GetEncoding("ISO-8859-1");            
 
             foreach (DataRow row in dt.Rows)
             {

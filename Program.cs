@@ -16,15 +16,7 @@ namespace LcDevPack_TeamDamonA
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-            try
-            {
-                Application.Run((Form)new Main());
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-                
-            }
+      Application.Run((Form) new Main());
     }
   }
 }

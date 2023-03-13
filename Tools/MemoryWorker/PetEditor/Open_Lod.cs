@@ -57,10 +57,10 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker.PetEditor
                         itemContainer.Set3 = b.ReadInt32();
                         itemContainer.Set4 = b.ReadInt32();
                         itemContainer.Set5 = b.ReadInt32();
-                        itemContainer.Smc = Encoding.GetEncoding(1251).GetString(b.ReadBytes(64));
-                        itemContainer.Effect1 = Encoding.GetEncoding(1251).GetString(b.ReadBytes(32));
-                        itemContainer.Effect2 = Encoding.GetEncoding(1251).GetString(b.ReadBytes(32));
-                        itemContainer.Effect3 = Encoding.GetEncoding(1251).GetString(b.ReadBytes(32));
+                        itemContainer.Smc = Encoding.GetEncoding("ISO-8859-1").GetString(b.ReadBytes(64));
+                        itemContainer.Effect1 = Encoding.GetEncoding("ISO-8859-1").GetString(b.ReadBytes(32));
+                        itemContainer.Effect2 = Encoding.GetEncoding("ISO-8859-1").GetString(b.ReadBytes(32));
+                        itemContainer.Effect3 = Encoding.GetEncoding("ISO-8859-1").GetString(b.ReadBytes(32));
                         itemContainer.JewelOptionType = b.ReadInt32();
                         itemContainer.JewelOptionLevel = b.ReadInt32();
                         int[] array3 = new int[10];
@@ -100,8 +100,8 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker.PetEditor
                 {
                     int ID = b.ReadInt32();
                     int it = ItemList.FindIndex(p => p.ItemID.Equals(ID));
-                    string name = Encoding.GetEncoding(1251).GetString(b.ReadBytes(b.ReadInt32()));
-                    string desc = Encoding.GetEncoding(1251).GetString(b.ReadBytes(b.ReadInt32()));
+                    string name = Encoding.GetEncoding("ISO-8859-1").GetString(b.ReadBytes(b.ReadInt32()));
+                    string desc = Encoding.GetEncoding("ISO-8859-1").GetString(b.ReadBytes(b.ReadInt32()));
                     if (it != -1)
                     {
                         ItemList[it].Name = name;

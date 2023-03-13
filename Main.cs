@@ -15,6 +15,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -103,7 +104,8 @@ namespace LcDevPack_TeamDamonA
       });
       try
       {
-        MySqlConnection mySqlConnection = new MySqlConnection("SERVER=" + Host + ";DATABASE=" + Database + ";UID=" + User + ";PASSWORD=" + Password + ";");
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                MySqlConnection mySqlConnection = new MySqlConnection("SERVER=" + Host + ";DATABASE=" + Database + ";UID=" + User + ";PASSWORD=" + Password + ";"+ "SslMode=none;");
         mySqlConnection.Open();
                 Text = Globals.Name;
         if (mySqlConnection.State == ConnectionState.Open)

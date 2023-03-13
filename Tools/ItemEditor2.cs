@@ -37,7 +37,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private string Password = ItemEditor2.connection.ReadSettings("Password");
         private string Database = ItemEditor2.connection.ReadSettings("Database");
         private string language = ItemEditor2.connection.ReadSettings("Language");//dethunter12 test
-        private Encoding encoding = Encoding.GetEncoding("ISO-8859-1"); //assassin add
+        private Encoding encoding = Encoding.GetEncoding(1251); //assassin add
 
         private DatabaseHandle databaseHandle = new DatabaseHandle();
         public string rowName = "a_index";

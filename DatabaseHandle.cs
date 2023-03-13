@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 namespace LcDevPack_TeamDamonA
@@ -218,7 +219,8 @@ namespace LcDevPack_TeamDamonA
             {
                 Query.Replace("'", "\\'").Replace("\\", "\\\\").Replace("'", "\\'");
                 MySqlConnection connection = new MySqlConnection("datasource=" + Host + ";port=3306;username=" + User + ";password=" + Password + ";database=" + Database);
-                MySqlCommand mySqlCommand = new MySqlCommand(Query, connection);
+               
+               MySqlCommand mySqlCommand = new MySqlCommand("SET character_set_client = cp1251;SET character_set_results = cp1251;" + Encoding.GetEncoding("windows-1251").GetString(Encoding.Convert(Encoding.Default, Encoding.GetEncoding("windows-1251"), Encoding.Default.GetBytes(Query))), connection);
                 connection.Open();
                 mySqlCommand.ExecuteReader();
                 connection.Close();

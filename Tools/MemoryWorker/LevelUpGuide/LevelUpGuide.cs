@@ -69,7 +69,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker.LevelUpGuide
                 {
                     int ID = binaryReader.ReadInt32();
                     int num3 = ItemList.FindIndex((LevelUP p) => p.StringIndex.Equals(ID));
-                    string @string = Encoding.GetEncoding("ISO-8859-1").GetString(binaryReader.ReadBytes(binaryReader.ReadInt32()));
+                    string @string = Encoding.GetEncoding(1251).GetString(binaryReader.ReadBytes(binaryReader.ReadInt32()));
                     if (num3 != -1)
                     {
                         ItemList[num3].Name = @string;
